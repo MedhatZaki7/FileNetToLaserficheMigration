@@ -1,0 +1,14 @@
+@model List<MigrationResult>
+<h2>Migration Results</h2>
+<table>
+    <thead><tr><th>File</th><th>Status</th></tr></thead>
+    <tbody>
+        @foreach (var result in Model)
+        {
+            <tr>
+                <td>@result.FileName</td>
+                <td>@(result.Success ? "✅ Success" : "❌ Failed")</td>
+            </tr>
+        }
+    </tbody>
+</table>
